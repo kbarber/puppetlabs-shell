@@ -119,7 +119,9 @@ Puppet::Face.define(:shell, '0.0.1') do
 
       file = Tempfile.new(resource.to_s)
       File.open(file.path, "w") { |f| f.puts resource.to_manifest }
-      system(ENV['EDITOR'], file.path)
+      editor = ENV['EDITOR'] || 'vi'
+      #puts "#{editor} #{file.path}"
+      system(editor, file.path)
       text = File.read(file.path)
 
       apply_code(text)

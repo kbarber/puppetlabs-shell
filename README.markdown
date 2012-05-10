@@ -58,4 +58,4 @@ At the prompt, the following commands can be used:
  
 # Detailed Usage
 
-TBA
+Once installed do 'puppet help shell' to see more detailed information.
